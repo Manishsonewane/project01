@@ -1,0 +1,49 @@
+{%extends "base.html"%} {%load static%}
+
+  <!-- contact section start -->
+    {%block content%}  
+    
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US</title>
+    <style>
+        body {
+            background-color: powderblue;
+        }
+        
+        h5 {
+            color: blue;
+        }
+        
+        h3 {
+            color: blue;
+        }
+        
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Contact us</h3>
+    <form action="{% url 'sendmail' %}" method="POST">
+        {%csrf_token%}
+        <input type="text" placeholder="Name" name="Name"><br><br>
+        <input type="text" placeholder="phone" name="phone"><br><br>
+        
+        <input type="text" placeholder="email" name="email"><br><br>
+        <input type="text" placeholder="message" name="message"><br><br>
+        <input type="submit" name="Submit"><br><br>
+
+    </form>
+    
+</body>
+
+  <!-- contact section end -->
+{%endblock%}
